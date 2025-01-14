@@ -12,7 +12,9 @@
     <version>1.2-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <properties>
-        <jenkins.version>2.414.3</jenkins.version>
+        <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+        <jenkins.baseline>2.414</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <useBeta>true</useBeta>
         <access-modifier-checker.skip>true</access-modifier-checker.skip>
     </properties>
@@ -57,7 +59,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.414.x</artifactId>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
                 <version>2643.vfa_93ff299d20</version>
                 <scope>import</scope>
                 <type>pom</type>
